@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::middleware('auth:sanctum')->group(function() {
     Route::get('/auth', [ApiController::class, 'auth']);
-    Route::post('/logout', [ApiController::class, 'logout']);
+    Route::post('/logout', [ApiController::class, 'logout'])->name('logout');
 
     Route::group(
         [
@@ -21,5 +21,5 @@ Route::middleware('auth:sanctum')->group(function() {
     );
 });
 
-Route::post('/register', [ApiController::class, 'register']);
-Route::post('/login', [ApiController::class, 'login']);
+Route::post('/register', [ApiController::class, 'register'])->name('register');
+Route::post('/login', [ApiController::class, 'login'])->name('login');
